@@ -46,18 +46,16 @@ jobs:
         env:
           CI: true
 
-      - name: Code Coverage Report
-        uses: irongut/CodeCoverageSummary@v1.3.0
+      - name: Produce the coverage report
+        uses: insightsengineering/coverage-action@v2
         with:
-          filename: coverage/**/coverage.cobertura.xml
-          badge: true
-          fail_below_min: true
-          format: markdown
-          hide_branch_rate: false
-          hide_complexity: true
-          indicators: true
-          output: both
-          thresholds: "99 100"
+          path: ./cobertura.xml
+          threshold: 100
+          fail: true
+          publish: true
+          diff: true
+          diff-branch: main
+          diff-storage: _xml_coverage_reports
 
       - name: Build Project
         run: npm run build
