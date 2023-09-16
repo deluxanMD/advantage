@@ -13,16 +13,22 @@
   "extends": [
     "plugin:react/recommended",
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
   ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off"
   },
-  "ignorePatterns": ["index.tsx", "reportWebVitals.ts"]
+  "ignorePatterns": [
+    "index.tsx",
+    "reportWebVitals.ts"
+  ]
 }
