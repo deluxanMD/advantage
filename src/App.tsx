@@ -7,7 +7,7 @@ const App = () => {
     <div className="App" data-testid="App.Container">
       {count > 0 && <h1>Heading</h1>}
       <button onClick={() => setCount((oldValue) => oldValue + 1)}>
-        Increment
+        Increment button
       </button>
     </div>
   );
