@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-      - run: npm install
+      - run: npm ci
       - run: npm run format:check
       - run: npm test -- --coverage
       - name: Upload coverage reports to Codecov
