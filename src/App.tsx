@@ -1,11 +1,13 @@
-import "./App.css";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="App" data-testid="App.Container">
-      <h1>Heading</h1>
+      {count > 0 && <h1>Heading</h1>}
     </div>
   );
-}
+};
 
 export default App;
