@@ -49,7 +49,7 @@ jobs:
       - name: Produce the coverage report
         uses: insightsengineering/coverage-action@v2
         with:
-          path: ./cobertura.xml
+          path: ./clover.xml
           threshold: 100
           fail: true
           publish: true
