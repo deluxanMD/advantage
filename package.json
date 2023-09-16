@@ -30,12 +30,16 @@
     "lint": "eslint src/**/*.ts*",
     "lint:fix": "eslint --fix",
     "format:check": "prettier --check \"src/**/*.{jsx,js,ts,tsx}\"",
-    "format": "prettier --write \"src/**/*.{jsx,js,ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{jsx,js,ts,tsx}\"",
+    "storybook": "DISABLE_ESLINT_PLUGIN=true storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:import/errors",
+      "plugin:import/typescript"
     ]
   },
   "browserslist": {
@@ -53,9 +57,23 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-typescript": "^7.22.15",
+    "@storybook/addon-essentials": "^7.4.2",
+    "@storybook/addon-interactions": "^7.4.2",
+    "@storybook/addon-links": "^7.4.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.2",
+    "@storybook/preset-create-react-app": "^7.4.2",
+    "@storybook/react": "^7.4.2",
+    "@storybook/react-webpack5": "^7.4.2",
+    "@storybook/testing-library": "^0.2.1",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.3"
+    "eslint-plugin-storybook": "^0.6.13",
+    "prettier": "^3.0.3",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.4.2",
+    "webpack": "^5.88.2"
   }
 }
