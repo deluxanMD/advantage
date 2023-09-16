@@ -26,10 +26,21 @@ jobs:
       - run: npm install
       - run: npm run format:check
       - run: npm test -- --coverage
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          CI: true
+
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          name: Upload reports to codecov
+          fail_ci_if_error: true
+          verbose: true
+      - run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          find . -iregex "codecov.*"
+          chmod +x codecov 
+          ./codecov -t ${CODECOV_TOKEN}
       - name: Build the project
         run: npm run build
       - name: Configure AWS credentials
