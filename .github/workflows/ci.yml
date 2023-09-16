@@ -57,7 +57,7 @@ jobs:
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           find . -iregex "codecov.*"
           chmod +x codecov 
-          ./codecov -t ${CODECOV_TOKEN}
+          ./codecov -t ${{ secrets.CODECOV_TOKEN }}
 
       - name: Build Project
         run: npm run build
